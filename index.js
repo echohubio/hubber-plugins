@@ -29,12 +29,7 @@ const storePluginState = (iot, architect) => {
     plugins.push(plugin);
   });
 
-  debug(plugins);
-  const state = {
-    plugins,
-  };
-
-  iot.saveState('plugins', state);
+  iot.saveState('plugins', plugins);
 };
 
 const execute = (payload) => {
