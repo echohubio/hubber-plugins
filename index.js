@@ -17,8 +17,9 @@ const storePluginState = (iot, architect) => {
 
     const packagePath = path.join(pluginPath, 'package.json');
     const metadata = JSON.parse(fs.readFileSync(packagePath, 'utf8'));
+    const name = metadata.name.replace(/^hubber-/, '');
     const plugin = {
-      name: metadata.name,
+      name,
       version: metadata.version,
       description: metadata.description,
       author: metadata.author,
