@@ -1,7 +1,7 @@
 {
   "author": "John Ferlito <johnf@inodes.org> (http://inodes.org)",
   "bugs": {
-    "url": "https://github.com/johnf/hubber-plugins/issues"
+    "url": "https://github.com/echohubio/hubber-plugins/issues"
   },
   "dependencies": {
     "debug": "^2.6.0",
@@ -22,7 +22,7 @@
     "webpack": "^1.14.0",
     "webpack-node-externals": "^1.5.4"
   },
-  "homepage": "https://github.com/johnf/hubber-plugins#readme",
+  "homepage": "https://github.com/echohubio/hubber-plugins#readme",
   "keywords": [
     "echohub",
     "hubber",
@@ -44,12 +44,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "johnf/hubber-plugins"
+    "url": "echohubio/hubber-plugins"
   },
   "scripts": {
     "build": "webpack -p",
     "lint": "eslint .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postversion": "git push",
+    "prepublish": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "version": "vi CHANGELOG.md && git add CHANGELOG.md"
   },
   "version": "1.0.1"
 }
