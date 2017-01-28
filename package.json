@@ -1,28 +1,37 @@
 {
-  "name": "hubber-plugins",
-  "version": "1.0.0",
-  "description": "Plugins plugin for Hubber",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint ."
+  "author": "John Ferlito <johnf@inodes.org> (http://inodes.org)",
+  "bugs": {
+    "url": "https://github.com/johnf/hubber-plugins/issues"
   },
+  "dependencies": {
+    "debug": "^2.6.0",
+    "npm-install-package": "^2.1.0"
+  },
+  "description": "Plugins plugin for Hubber",
+  "devDependencies": {
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-latest": "^6.22.0",
+    "eslint": "^3.14.1",
+    "eslint-config-airbnb": "^14.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^3.0.2",
+    "eslint-plugin-react": "^6.9.0",
+    "json-loader": "^0.5.4",
+    "webpack": "^1.14.0",
+    "webpack-node-externals": "^1.5.4"
+  },
+  "homepage": "https://github.com/johnf/hubber-plugins#readme",
   "keywords": [
     "echohub",
     "hubber",
     "plugin",
     "plugins"
   ],
-  "author": "John Ferlito <johnf@inodes.org> (http://inodes.org)",
   "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/echohub/hubber-plugins.git"
-  },
-  "bugs": {
-    "url": "https://github.com/echohub/hubber-plugins/issues"
-  },
-  "homepage": "https://github.com/echohub/hubber-plugins#readme",
+  "main": "dist/index.js",
+  "name": "hubber-plugins",
   "plugin": {
     "consumes": [
       "config",
@@ -33,17 +42,14 @@
       "plugins"
     ]
   },
-  "dependencies": {
-    "debug": "^2.6.0",
-    "npm-install-package": "^2.1.0"
+  "repository": {
+    "type": "git",
+    "url": "johnf/hubber-plugins"
   },
-  "devDependencies": {
-    "babel-plugin-add-module-exports": "^0.2.1",
-    "babel-preset-latest": "^6.22.0",
-    "eslint": "^3.14.1",
-    "eslint-config-airbnb": "^14.0.0",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^3.0.2",
-    "eslint-plugin-react": "^6.9.0"
-  }
+  "scripts": {
+    "build": "webpack -p",
+    "lint": "eslint .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.0"
 }
