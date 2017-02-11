@@ -1,16 +1,14 @@
 import path from 'path';
 import fs from 'fs';
-import Debug from 'debug';
+import log from 'electron-log';
 import npmInstall from 'npm-install-package';
-
-const debug = Debug('hubber:plugin:plugins');
 
 class Plugins {
   constructor(options, imports, register) {
-    Debug('setup');
+    log.debug('Plugins setup');
 
-    Debug('options:', options);
-    Debug('imports:', imports);
+    // log.debug('options:', options);
+    // log.debug('imports:', imports);
 
     this.options = options;
     this.iot = imports.iot;
@@ -29,7 +27,7 @@ class Plugins {
 
   syncPlugins() {
     // Installed vs active in on disk config
-    debug('syncing plugin state');
+    log.debug('syncing plugin state');
 
     const plugins = [];
 
@@ -58,8 +56,8 @@ class Plugins {
   }
 
   execute(payload) {
-    debug('execute');
-    debug(payload);
+    log.debug('execute');
+    log.debug(payload);
 
     const command = payload.command;
 
@@ -80,27 +78,25 @@ class Plugins {
 
     npmInstall(fullPackage, (npmErr) => {
       if (npmErr) {
-        debug(`Failed to install ${fullPackage}`);
-        debug(npmErr);
+        log.debug(`Failed to install ${fullPackage}`);
+        log.debug(npmErr);
         return;
       }
 
-      debug(`Installed ${fullPackage}`);
+      log.debug(`Installed ${fullPackage}`);
 
       // Add to the config
-      const plugins = this.config.get('plugins');
-      plugins.push(packageName);
-      this.config.set('plugins', plugins);
+      this.config.addPlugin(packageName);
 
       // Load it
       this.architect.loadAdditionalPlugins([packageName], (loadErr) => {
         if (loadErr) {
-          debug(`failed to load plugin ${fullPackage}`);
-          debug(loadErr);
+          log.debug(`failed to load plugin ${fullPackage}`);
+          log.debug(loadErr);
           return;
         }
 
-        debug(`loaded plugin ${fullPackage}`);
+        log.debug(`loaded plugin ${fullPackage}`);
         this.syncPlugins();
       });
     });

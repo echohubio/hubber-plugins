@@ -4,7 +4,7 @@
     "url": "https://github.com/echohubio/hubber-plugins/issues"
   },
   "dependencies": {
-    "debug": "^2.6.0",
+    "electron-log": "^1.3.0",
     "npm-install-package": "^2.1.0"
   },
   "description": "Plugins plugin for Hubber",
