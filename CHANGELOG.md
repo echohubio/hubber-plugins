@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.0 (2017-01-29)
+
+* Move to electron-log (@johnf)
+
 ## 1.0.2 (2017-01-29)
 
 * Move to Github organisation (@johnf)
