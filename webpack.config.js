@@ -12,15 +12,17 @@ module.exports = {
   },
   externals: [nodeExternals()],
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
-        loader: 'babel',
+        enforce: 'pre',
+        loader: 'eslint-loader',
         exclude: /node_modules/,
       },
       {
-        test: /\.json$/,
-        loader: 'json-loader',
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/,
       },
     ],
   },
