@@ -1,7 +1,7 @@
 import path from 'path';
 import fs from 'fs';
 import log from 'electron-log';
-import npmInstall from 'npm-install-package';
+import npmi from 'npmi';
 
 class Plugins {
   constructor(options, imports, register) {
@@ -76,14 +76,21 @@ class Plugins {
 
     // TODO check isn't already installed
 
-    npmInstall(fullPackage, (npmErr) => {
-      if (npmErr) {
+    const options = {
+      name: packageName,
+      version,
+      // path: '.', // installation path [default: '.']
+    };
+
+    npmi(options, (err) => {
+      if (err) {
         log.debug(`Failed to install ${fullPackage}`);
-        log.debug(npmErr);
+        log.debug(err);
         return;
       }
 
       log.debug(`Installed ${fullPackage}`);
+      // console.log(options.name+'@'+options.version+' installed in '+path.resolve(options.path));
 
       // Add to the config
       this.config.addPlugin(packageName);
