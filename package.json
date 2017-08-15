@@ -50,7 +50,7 @@
     "build": "webpack -p",
     "lint": "eslint .",
     "postversion": "git push",
-    "prepublish": "npm run build",
+    "prepublish": "yarn run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "version": "vi CHANGELOG.md && git add CHANGELOG.md"
   },
