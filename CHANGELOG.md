@@ -1,6 +1,10 @@
 # Changelog
 
-## 2.0.0 (2017-08-15)
+## 2.0.2 (2017-08-15)
+
+* Change plugin path (@johnf)
+
+## 2.0.1 (2017-08-15)
 
 * Publishing bug (@johnf)
 
