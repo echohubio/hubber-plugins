@@ -1,4 +1,4 @@
-import { app as electronApp } from 'electron'; // eslint-disable-line
+import { remote } from 'electron'; // eslint-disable-line
 import path from 'path';
 import fs from 'fs';
 import log from 'electron-log';
@@ -75,7 +75,7 @@ class Plugins {
     const packageName = `hubber-${name}`;
     const fullPackage = `${packageName}@${version}`;
 
-    const pluginPath = path.join(electronApp.getPath('userData'), 'plugins');
+    const pluginPath = path.join(remote.app.getPath('userData'), 'plugins');
 
     // TODO check isn't already installed
 
