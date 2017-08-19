@@ -75,7 +75,7 @@ class Plugins {
     const packageName = `hubber-${name}`;
     const fullPackage = `${packageName}@${version}`;
 
-    const pluginPath = path.join(remote.app.getPath('userData'), 'plugins');
+    const pluginPath = path.join(remote.app.getPath('userData'), 'hubber-plugins');
 
     // TODO check isn't already installed
 
