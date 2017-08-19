@@ -1,6 +1,6 @@
 # Changelog
 
-## 2.0.2 (2017-08-15)
+## 2.0.4 (2017-08-15)
 
 * Change plugin path (@johnf)
 
