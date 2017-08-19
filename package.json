@@ -4,7 +4,6 @@
     "url": "https://github.com/echohubio/hubber-plugins/issues"
   },
   "dependencies": {
-    "electron": "^1.7.5",
     "electron-log": "^2.2.7",
     "npmi": "^3.0.0"
   },

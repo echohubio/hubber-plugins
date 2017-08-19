@@ -1,4 +1,4 @@
-import { remote } from 'electron'; // eslint-disable-line
+import { remote } from 'electron'; // eslint-disable-line import/no-extraneous-dependencies
 import path from 'path';
 import fs from 'fs';
 import log from 'electron-log';
