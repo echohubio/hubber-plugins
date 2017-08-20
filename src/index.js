@@ -83,6 +83,9 @@ class Plugins {
       name: packageName,
       version,
       path: pluginPath,
+      npmLoad: {
+        loglevel: 'error',
+      },
     };
 
     npmi(options, (err) => {
@@ -93,7 +96,6 @@ class Plugins {
       }
 
       log.debug(`Installed ${fullPackage}`);
-      // console.log(options.name+'@'+options.version+' installed in '+path.resolve(options.path));
 
       // Add to the config
       this.config.addPlugin(packageName);
