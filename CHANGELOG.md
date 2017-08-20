@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.9 (2017-08-20)
+
+* Adjust npm logging level (@johnf)
+
 ## 2.0.8 (2017-08-19)
 
 * Change plugin path (@johnf)
