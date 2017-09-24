@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.0.0 (2017-09-24)
+
+* Sync plugin support (@johnf)
+
 ## 2.0.9 (2017-08-20)
 
 * Adjust npm logging level (@johnf)
