@@ -88,11 +88,13 @@ class Plugins {
       },
     };
 
+    const promise = Promise.new();
+
     npmi(options, (err) => {
       if (err) {
         log.debug(`Failed to install ${fullPackage}`);
         log.debug(err);
-        return;
+        promise.resolve({ status: 'error', message: 'failed to install plugin' });
       }
 
       log.debug(`Installed ${fullPackage}`);
@@ -105,13 +107,17 @@ class Plugins {
         if (loadErr) {
           log.debug(`failed to load plugin ${fullPackage}`);
           log.debug(loadErr);
-          return;
+          promise.resolve({ status: 'error', message: 'failed to install plugin' });
         }
 
         log.debug(`loaded plugin ${fullPackage}`);
         this.syncPlugins();
+
+        promise.resolve({ status: 'ok', message: 'installed plugin' });
       });
     });
+
+    return promise;
   }
 }
 
