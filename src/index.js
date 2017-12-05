@@ -24,21 +24,25 @@ class Plugins {
     });
   }
 
-  execute(payload) {
+  async execute(payload) {
     log.debug('execute');
     log.debug(payload);
 
     const command = payload.command;
 
+    let result;
     switch (command) {
       case 'list':
-        return this.list(payload);
+        result = await this.list(payload);
+        break;
       case 'install':
-        return this.install(payload);
+        result = await this.install(payload);
+        break;
       default:
-        console.error('Unknown command');
-        return null;
+        log.error('Unknown command');
     }
+
+    return result;
   }
 
   list() {
