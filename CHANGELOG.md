@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.0.0 (2017-12-05)
+
+* Switch to async mode (@johnf)
+
 ## 3.0.0 (2017-09-24)
 
 * Sync plugin support (@johnf)
