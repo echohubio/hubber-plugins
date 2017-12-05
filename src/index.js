@@ -12,7 +12,6 @@ class Plugins {
     // log.debug('imports:', imports);
 
     this.options = options;
-    this.iot = imports.iot;
     this.hub = imports.hub;
     this.config = imports.config;
 
@@ -22,14 +21,27 @@ class Plugins {
 
     this.hub.on('ready', (architect) => {
       this.architect = architect;
-      this.syncPlugins();
     });
   }
 
-  syncPlugins() {
-    // Installed vs active in on disk config
-    log.debug('syncing plugin state');
+  execute(payload) {
+    log.debug('execute');
+    log.debug(payload);
 
+    const command = payload.command;
+
+    switch (command) {
+      case 'list':
+        return this.list(payload);
+      case 'install':
+        return this.install(payload);
+      default:
+        console.error('Unknown command');
+        return null;
+    }
+  }
+
+  list() {
     const plugins = [];
 
     this.architect.config.forEach((pluginData) => {
@@ -53,23 +65,9 @@ class Plugins {
       plugins.push(plugin);
     });
 
-    this.iot.saveState('plugins', plugins);
+    return plugins;
   }
 
-  execute(payload) {
-    log.debug('execute');
-    log.debug(payload);
-
-    const command = payload.command;
-
-    switch (command) {
-      case 'install':
-        this.install(payload);
-        break;
-      default:
-        console.error('Unknown command');
-    }
-  }
 
   install({ name, version }) {
     const packageName = `hubber-${name}`;
