@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.0.1 (2017-12-05)
+
+* republish (@johnf)
+
 ## 4.0.0 (2017-12-05)
 
 * Switch to async mode (@johnf)
