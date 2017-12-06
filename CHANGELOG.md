@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.0.2 (2017-12-06)
+
+* update modules (@johnf)
+
 ## 4.0.1 (2017-12-05)
 
 * republish (@johnf)
