@@ -1,4 +1,4 @@
-import { remote } from 'electron'; // eslint-disable-line import/no-extraneous-dependencies
+import { remote } from 'electron';
 import path from 'path';
 import fs from 'fs';
 import log from 'electron-log';
@@ -28,7 +28,7 @@ class Plugins {
     log.debug('execute');
     log.debug(payload);
 
-    const command = payload.command;
+    const { command } = payload;
 
     let result;
     switch (command) {

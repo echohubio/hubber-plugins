@@ -1,5 +1,5 @@
-var path = require('path'); // eslint-disable-line no-var
-var nodeExternals = require('webpack-node-externals'); // eslint-disable-line no-var
+const path = require('path');
+const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
   entry: './src/index.js',
