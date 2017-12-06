@@ -91,32 +91,31 @@ class Plugins {
       },
     };
 
-    const promise = Promise.new();
-
-    npmi(options, (err) => {
-      if (err) {
-        log.debug(`Failed to install ${fullPackage}`);
-        log.debug(err);
-        promise.resolve({ status: 'error', message: 'failed to install plugin' });
-      }
-
-      log.debug(`Installed ${fullPackage}`);
-
-      // Add to the config
-      this.config.addPlugin(packageName);
-
-      // Load it
-      this.architect.loadAdditionalPlugins([packageName], (loadErr) => {
-        if (loadErr) {
-          log.debug(`failed to load plugin ${fullPackage}`);
-          log.debug(loadErr);
-          promise.resolve({ status: 'error', message: 'failed to install plugin' });
+    const promise = new Promise((resolve) => {
+      npmi(options, (err) => {
+        if (err) {
+          log.debug(`Failed to install ${fullPackage}`);
+          log.debug(err);
+          resolve({ status: 'error', message: 'failed to install plugin' });
         }
 
-        log.debug(`loaded plugin ${fullPackage}`);
-        this.syncPlugins();
+        log.debug(`Installed ${fullPackage}`);
 
-        promise.resolve({ status: 'ok', message: 'installed plugin' });
+        // Add to the config
+        this.config.addPlugin(packageName);
+
+        // Load it
+        this.architect.loadAdditionalPlugins([packageName], (loadErr) => {
+          if (loadErr) {
+            log.debug(`failed to load plugin ${fullPackage}`);
+            log.debug(loadErr);
+            resolve({ status: 'error', message: 'failed to install plugin' });
+          }
+
+          log.debug(`loaded plugin ${fullPackage}`);
+
+          resolve({ status: 'ok', message: 'installed plugin' });
+        });
       });
     });
 

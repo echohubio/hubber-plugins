@@ -3,5 +3,5 @@ module.exports = {
     'eslint:recommended',
     'plugin:eslint-comments/recommended',
     'airbnb',
-  ]
+  ],
 };
