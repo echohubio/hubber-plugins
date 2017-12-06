@@ -33,10 +33,10 @@ class Plugins {
     let result;
     switch (command) {
       case 'list':
-        result = await this.list(payload);
+        result = await this.list(payload.args);
         break;
       case 'install':
-        result = await this.install(payload);
+        result = await this.install(payload.args);
         break;
       default:
         log.error('Unknown command');
@@ -78,6 +78,7 @@ class Plugins {
     const fullPackage = `${packageName}@${version}`;
 
     const pluginPath = path.join(remote.app.getPath('userData'), 'hubber-plugins');
+    log.debug(`Installing ${fullPackage} to ${pluginPath}`);
 
     // TODO check isn't already installed
 
