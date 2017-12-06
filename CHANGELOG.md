@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.0.3 (2017-12-06)
+
+* fix plugin install (@johnf)
+
 ## 4.0.2 (2017-12-06)
 
 * update modules (@johnf)
