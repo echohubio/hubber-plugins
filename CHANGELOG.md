@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.0.4 (2017-12-27)
+
+* reduce logging (@johnf)
+
 ## 4.0.3 (2017-12-06)
 
 * fix plugin install (@johnf)
