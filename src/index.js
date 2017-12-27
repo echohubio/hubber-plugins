@@ -86,9 +86,9 @@ class Plugins {
       name: packageName,
       version,
       path: pluginPath,
-      npmLoad: {
-        loglevel: 'error',
-      },
+      // npmLoad: {
+      //   loglevel: 'error',
+      // },
     };
 
     const promise = new Promise((resolve) => {
