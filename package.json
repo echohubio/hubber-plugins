@@ -5,7 +5,7 @@
   },
   "dependencies": {
     "electron-log": "^2.2.7",
-    "npmi": "^4.0.0"
+    "npmi": "^3"
   },
   "description": "Plugins plugin for Hubber",
   "devDependencies": {
@@ -55,7 +55,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "version": "vi CHANGELOG.md && git add CHANGELOG.md"
   },
-  "version": "4.0.5",
+  "version": "4.0.6",
   "peerDependencies": {
     "electron": "^1.7.10"
   }
