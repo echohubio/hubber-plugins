@@ -1,4 +1,4 @@
-# Changelog
+# Change Log
 
 ## 4.0.4 (2017-12-27)
 
