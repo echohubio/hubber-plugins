@@ -1,5 +1,9 @@
 # Change Log
 
+## 4.0.5 (2017-12-29)
+
+* Clean up (@johnf)
+
 ## 4.0.4 (2017-12-27)
 
 * reduce logging (@johnf)
