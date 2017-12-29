@@ -1,5 +1,9 @@
 # Change Log
 
+## 4.0.6 (2017-12-29)
+
+* Fix module export (@johnf)
+
 ## 4.0.5 (2017-12-29)
 
 * Clean up (@johnf)

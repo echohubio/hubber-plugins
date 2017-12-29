@@ -12,6 +12,7 @@
     "babel-core": "^6.22.1",
     "babel-loader": "^7.1.1",
     "babel-minify-webpack-plugin": "^0.2.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.1",
@@ -55,7 +56,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "version": "vi CHANGELOG.md && git add CHANGELOG.md"
   },
-  "version": "4.0.6",
+  "version": "4.0.7",
   "peerDependencies": {
     "electron": "^1.7.10"
   }
